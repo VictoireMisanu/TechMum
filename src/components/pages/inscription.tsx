@@ -78,12 +78,13 @@ export default function RegistrationForm() {
             required
           />
 
-          <button
+          <Link
+            to="/course1"
             type="submit"
-            className="w-full font-semibold rounded-full py-3 px-4 transition-colors duration-200 mt-6 bg-mainPink hover:bg-primaryPink"
+            className="w-full flex justify-center items-center font-semibold rounded-full py-3 px-4 transition-colors duration-200 mt-6 bg-mainPink hover:bg-primaryPink"
           >
             Créer
-          </button>
+          </Link>
         </form>
 
         <div className="mt-6 text-center">
