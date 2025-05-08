@@ -23,7 +23,7 @@ export default function LandingPage() {
             </div>
             <div id="btnSection" className=" flex flex-row justify-start items-center mx-20  gap-4 -mt-10">
               <div className='w-1/4 h-full'>
-                <Link to={`/courses`} className="bg-mainGradient w-full rounded-2xl py-2 flex justify-center items-center gap-5 hover:bg-secondaryGradient hover:shadow-lg hover:shadow-black text-sm md:text-base text-white font-roboto font-bold">
+                <Link to={`/course1`} className="bg-mainGradient w-full rounded-2xl py-2 flex justify-center items-center gap-5 hover:shadow-lg hover:shadow-black text-sm md:text-base text-white font-roboto font-bold">
                   <span>Commencer</span>
                   <Play className="h-9 w-9 text-white" />
                 </Link>
@@ -74,15 +74,15 @@ export default function LandingPage() {
             </div>
           </div>
         </div>
-        <div id='courseSection' className='h-[40rem] bg-simpleGray p-10 flex flex-col gap-10'>
+        <div id='courseSection' className='h-[45rem] bg-simpleGray p-10 flex flex-col gap-10'>
           <BigTitle id="Courses">Nos cours</BigTitle>
           <div id='courses' className='w-full h-auto flex flex-row items-center justify-center gap-10'>
-            <CourseCard title='Développement Web' description='Cours complet en développement web adapté pour vous' imageUrl='/images/coding.jpeg'/>
-            <CourseCard title='Marketing Digital' description='Cours complet en marketing digital adapté pour vous' imageUrl='/images/digitalMarketing.jpg'/> 
-            <CourseCard title='Community Manager' description='Cours complet en community manager adapté pour vous' imageUrl='/images/communityManager.jpg'/>
+            <CourseCard title="Bureautique" description='Cours complet en bureautique' imageUrl='/images/coding.jpeg' courses={5} time={5} test={1} price={15} language='Français' path='/course1'/>
+            <CourseCard title='Marketing Digital' description='Cours complet en marketing digital' imageUrl='/images/digitalMarketing.jpg' courses={3} time={3} test={1} price={30} language='Français'path='/course2'/> 
+            <CourseCard title='Community Manager' description='Cours complet en community manager' imageUrl='/images/communityManagement.jpg' courses={7} time={3} test={1} price={50} language='Français'path='/course3'/>
 
           </div>
-          <Link to={`/products`} className="bg-mainGradient w-1/5 rounded-2xl py-2 ml-5 flex justify-center items-center hover:bg-secondaryGradient hover:shadow-lg hover:shadow-black text-sm md:text-base text-white font-roboto font-bold hover:bg-secondaryOrange">
+          <Link to={`/products`} className="bg-mainPink w-1/5 rounded-2xl py-2 ml-5 flex justify-center items-center hover:shadow-lg hover:shadow-black text-sm md:text-base text-white font-roboto font-bold hover:bg-primaryPink">
             <span>Découvrez plus</span>
           </Link>
         </div>

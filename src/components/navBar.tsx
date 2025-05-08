@@ -52,10 +52,10 @@ export default function HeaderNav() {
                 <ul className="py-2">
                   <li>
                     <Link
-                      to="/cours1"
+                      to="/course1"
                       className="block px-4 py-2 text-gray-800 hover:bg-gray-100 hover:text-primaryPink"
                     >
-                      Développement Web
+                      Bureautique
                     </Link>
                   </li>
                   <li>
@@ -101,7 +101,7 @@ export default function HeaderNav() {
             </div>
           </form>
   
-          <Link to={`/courses`} className="bg-mainGradient w-40 h-12 rounded-2xl py-2 flex justify-center items-center gap-5 hover:shadow-lg hover:shadow-black text-sm md:text-base text-white font-roboto font-bold hover:bg-secondaryOrange">
+          <Link to={`/course1`} className="bg-mainGradient w-40 h-12 rounded-2xl py-2 flex justify-center items-center gap-5 hover:shadow-lg hover:shadow-black text-sm md:text-base text-white font-roboto font-bold hover:bg-secondaryOrange">
             <span>Commencer</span>
             <Play className="h-7 w-7 text-white" />
           </Link> {/* Cart Icon */}

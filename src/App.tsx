@@ -1,16 +1,13 @@
-// import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Inscription from './components/pages/inscription'
 import Login from './components/pages/login'
 import Landingpage from './components/pages/landingPage'
-import Courses from './components/pages/courses'
-// import NavBar from './components/navBar'
-// import './App.css'
+import DigitalLitteracy from './components/pages/digitalLitteracy'
+import DigitalMarketing from './components/pages/digitalMarketing'
+import CommunityManagement from './components/pages/communityManagement'
+
 
 function App() {
-  // const [count, setCount] = useState(0)
 
   return (
     <BrowserRouter>
@@ -24,8 +21,14 @@ function App() {
         <Route path='/login'>
           <Route index element={<Login/>}/>
         </Route>
-        <Route path='/courses'>
-          <Route index element={<Courses/>}/>
+        <Route path='/course1'>
+          <Route index element={<DigitalLitteracy/>}/>
+        </Route>
+        <Route path='/course2'>
+          <Route index element={<DigitalMarketing/>}/>
+        </Route>
+        <Route path='/course2'>
+          <Route index element={<CommunityManagement/>}/>
         </Route>
       </Routes>
     </BrowserRouter>
