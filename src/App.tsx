@@ -25,10 +25,10 @@ function App() {
           <Route index element={<ComputerScience/>}/>
         </Route>
         <Route path='/course2'>
-          <Route index element={<Couture/>}/>
-        </Route>
-        <Route path='/course2'>
           <Route index element={<Agriculture/>}/>
+        </Route>
+        <Route path='/course3'>
+          <Route index element={<Couture/>}/>
         </Route>
       </Routes>
     </BrowserRouter>
