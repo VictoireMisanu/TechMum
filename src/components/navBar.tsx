@@ -55,23 +55,23 @@ export default function HeaderNav() {
                       to="/course1"
                       className="block px-4 py-2 text-gray-800 hover:bg-gray-100 hover:text-primaryPink"
                     >
-                      Bureautique
+                      Informatique
                     </Link>
                   </li>
                   <li>
                     <Link
-                      to="/cours2"
+                      to="/course2"
                       className="block px-4 py-2 text-gray-800 hover:bg-gray-100 hover:text-primaryPink"
                     >
-                      Marketing Digital
+                      Agriculture
                     </Link>
                   </li>
                   <li>
                     <Link
-                      to="/cours3"
+                      to="/course3"
                       className="block px-4 py-2 text-gray-800 hover:bg-gray-100 hover:text-primaryPink"
                     >
-                      Community Manager
+                      Couture
                     </Link>
                   </li>
                 </ul>
