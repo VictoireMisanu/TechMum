@@ -23,7 +23,8 @@ export default {
       },
       fontFamily: {
         playfair: ['"Playfair Display"', 'serif'],
-        'roboto': ['Roboto', 'sans-serif'],
+        roboto: ['Roboto', 'sans-serif'],
+        titanOne: ['Titan One', 'cursive'],
       },
     },
   },

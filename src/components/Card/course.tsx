@@ -12,12 +12,13 @@ interface CourseCardProps {
     price : number;
     language : string;
     path : string;
+    className: string;
 }
-export default function CourseCard({ title, description, imageUrl, courses, time, test, price, language, path }: CourseCardProps) {
+export default function CourseCard({ className, title, description, imageUrl, courses, time, test, price, language, path }: CourseCardProps) {
     return (
-      <div className="w-full h-full flex flex-col gap-2 justify-start bg-slate-100 shadow-sm shadow-slate-500 hover:shadow-black hover:bg-slate-300">
-                  <Link to={path}><img src={imageUrl} alt="Product" className="w-full h-40 mb-4 brightness-50" /></Link>
-                  <h2 className="w-44 text-md text-nowrap font-bold text-black text-left pl-3 ml-6 bg-primaryPink/40">{title}</h2>
+      <div className={className}>
+                  <Link to={path}><img src={imageUrl} alt="Product" className="w-full h-40 mb-4 brightness-90" /></Link>
+                  <h2 className="w-52 text-md text-nowrap font-bold text-black text-left pl-3 ml-6 bg-primaryPink/40">{title}</h2>
                   <p className="text-black font-light mt-2 ml-6">{description}</p>
                   <div id="details" className="w-full h-10 flex gap-5 ml-6">
                     <div id="module" className="w-auto h-auto flex justify-center items-center gap-2">

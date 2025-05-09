@@ -2,9 +2,9 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Inscription from './components/pages/inscription'
 import Login from './components/pages/login'
 import Landingpage from './components/pages/landingPage'
-import DigitalLitteracy from './components/pages/digitalLitteracy'
-import DigitalMarketing from './components/pages/digitalMarketing'
-import CommunityManagement from './components/pages/communityManagement'
+import ComputerScience from './components/pages/computerScience'
+import Couture from './components/pages/couture'
+import Agriculture from './components/pages/agriculture'
 
 
 function App() {
@@ -22,13 +22,13 @@ function App() {
           <Route index element={<Login/>}/>
         </Route>
         <Route path='/course1'>
-          <Route index element={<DigitalLitteracy/>}/>
+          <Route index element={<ComputerScience/>}/>
         </Route>
         <Route path='/course2'>
-          <Route index element={<DigitalMarketing/>}/>
+          <Route index element={<Couture/>}/>
         </Route>
         <Route path='/course2'>
-          <Route index element={<CommunityManagement/>}/>
+          <Route index element={<Agriculture/>}/>
         </Route>
       </Routes>
     </BrowserRouter>
