@@ -5,6 +5,7 @@ import Landingpage from './components/pages/landingPage'
 import ComputerScience from './components/pages/computerScience'
 import Couture from './components/pages/couture'
 import Agriculture from './components/pages/agriculture'
+import AllCourses from './components/pages/allCourses'
 
 
 function App() {
@@ -20,6 +21,9 @@ function App() {
         </Route>
         <Route path='/login'>
           <Route index element={<Login/>}/>
+        </Route>
+        <Route path='/courses'>
+          <Route index element={<AllCourses/>}/>
         </Route>
         <Route path='/course1'>
           <Route index element={<ComputerScience/>}/>

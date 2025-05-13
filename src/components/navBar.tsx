@@ -101,7 +101,7 @@ export default function HeaderNav() {
             </div>
           </form>
   
-          <Link to={`/course1`} className="bg-mainGradient w-40 h-12 rounded-2xl py-2 flex justify-center items-center gap-5 hover:shadow-lg hover:shadow-black text-sm md:text-base text-white font-roboto font-bold hover:bg-secondaryOrange">
+          <Link to={`/courses`} className="bg-mainGradient w-40 h-12 rounded-2xl py-2 flex justify-center items-center gap-5 hover:shadow-lg hover:shadow-black text-sm md:text-base text-white font-roboto font-bold hover:bg-secondaryOrange">
             <span>Commencer</span>
             <Play className="h-7 w-7 text-white" />
           </Link> {/* Cart Icon */}

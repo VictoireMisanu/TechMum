@@ -23,7 +23,7 @@ export default function LandingPage() {
             </div>
             <div id="btnSection" className=" flex flex-row justify-start items-center mx-20  gap-4 -mt-10">
               <div className='w-1/4 h-full'>
-                <Link to={`/course1`} className="bg-mainGradient w-full rounded-2xl py-2 flex justify-center items-center gap-5 hover:shadow-lg hover:shadow-black text-sm md:text-base text-white font-roboto font-bold">
+                <Link to={`/courses`} className="bg-mainGradient w-full rounded-2xl py-2 flex justify-center items-center gap-5 hover:shadow-lg hover:shadow-black text-sm md:text-base text-white font-roboto font-bold">
                   <span>Commencer</span>
                   <Play className="h-9 w-9 text-white" />
                 </Link>
@@ -83,7 +83,7 @@ export default function LandingPage() {
             <CourseCard className="w-full h-full flex flex-col gap-2 justify-start bg-slate-100 shadow-sm shadow-slate-500 hover:shadow-black hover:bg-slate-300" title='Couture' description='Devenir couturière professionnelle.' imageUrl='/images/couture.jpg' courses={7} time={3} test={1} price={50} language='Français'path='/course3'/>
 
           </div>
-          <Link to={`/products`} className="bg-mainPink w-1/5 rounded-2xl py-2 ml-5 flex justify-center items-center hover:shadow-lg hover:shadow-black text-sm md:text-base text-white font-roboto font-bold hover:bg-primaryPink">
+          <Link to={`/courses`} className="bg-mainPink w-1/5 rounded-2xl py-2 ml-5 flex justify-center items-center hover:shadow-lg hover:shadow-black text-sm md:text-base text-white font-roboto font-bold hover:bg-primaryPink">
             <span>Découvrez plus</span>
           </Link>
         </div>
