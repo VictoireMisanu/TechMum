@@ -1,4 +1,4 @@
-import CourseCard from '../Card/course'
+import CourseCard from '../Card/videoCourse'
 import Header from '../navBar'
 
 

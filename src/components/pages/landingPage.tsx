@@ -4,7 +4,7 @@ import Header from '../navBar'
 import { Info, Play } from 'lucide-react'
 import BigTitle from '../Title/bigTitle'
 import Card from '../Card/card1'
-import CourseCard from '../Card/course'
+import CourseCard from '../Card/videoCourse'
 import Footer from '../footer'
 
 
