@@ -5,6 +5,47 @@
     <link rel="icon" type="image/svg+xml" href="/images/logoMumTech.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mum's Tech</title>
+    <script src="https://cdn.cinetpay.com/seamless/main.js"></script>
+    <script>
+      function checkout() {
+      CinetPay.setConfig({
+        apikey: "35736066166bf22f4d362b5.57114333",
+        site_id: 5884382,
+        notify_url: "http://127.0.0.1:5500/index.html",
+        close_after_response: true,
+        mode: "PRODUCTION"
+      });
+      CinetPay.getCheckout({
+        transaction_id: Math.floor(Math.random() * 1e8).toString(),
+        amount: 50,
+        currency: "USD",
+        channels: "ALL",
+        description: "YOUR_PAYMENT_DESCRIPTION",
+        customer_name: "Joe",
+        customer_surname: "Down",
+        customer_email: "down@test.com",
+        customer_phone_number: "088767611",
+        customer_address: "BP 0024",
+        customer_city: "Antananarivo",
+        customer_country: "CM",
+        customer_state: "CM",
+        customer_zip_code: "06510"
+      });
+    }
+
+    CinetPay.waitResponse(function(data) {
+      if (data.status == "REFUSED") {
+        alert("Votre paiement a échoué")
+      } else if (data.status == "ACCEPTED") {
+        alert("Votre paiement a été effectué avec succès")
+        localStorage.setItem("isSubscribed", "true")
+      }
+    });
+
+    CinetPay.onError(function(data) {
+      console.log(data);
+    });
+    </script>
   </head>
   <body>
     <div id="root"></div>
