@@ -2,7 +2,7 @@ import { Book, BookCheck, Clock, Eye, Languages} from "lucide-react";
 import { Link } from "react-router-dom";
 
 
-interface CourseCardProps {
+interface videoCourseCardProps {
     title: string;
     description: string;
     imageUrl: string;
@@ -14,7 +14,7 @@ interface CourseCardProps {
     path : string;
     className: string;
 }
-export default function CourseCard({ className, title, description, imageUrl, courses, time, test, price, language, path }: CourseCardProps) {
+export default function CourseCard({ className, title, description, imageUrl, courses, time, test, price, language, path }: videoCourseCardProps) {
     return (
       <div className={className}>
                   <Link to={path}><img src={imageUrl} alt="Product" className="w-full h-52 mb-4 brightness-90" /></Link>
