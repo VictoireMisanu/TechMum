@@ -60,6 +60,12 @@ export default function CourseDetail() {
     const isSubscribed = localStorage.getItem("isSubscribed") === "true";
     setIsSubscribed(isSubscribed);
   }, []);
+
+  const unlockCourse = () => {
+    localStorage.setItem("isSubscribed", "true");
+    setIsSubscribed(true);
+  };
+
   return (
     <div className="w-full min-h-screen flex flex-col bg-white p-8">
       <Header />
@@ -89,7 +95,14 @@ export default function CourseDetail() {
                 style={{ borderRadius: "0.5rem", background: "black" }}
               />
             )}
+            
           </div>
+          <button
+                  className="bg-green-600 text-white px-6 py-3 rounded-lg font-bold text-lg hover:bg-green-800 transition"
+                  onClick={unlockCourse}
+                >
+                  Débloquer
+                </button>
         </div>
         
         {/* Miniatures des autres cours */}
