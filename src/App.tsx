@@ -6,6 +6,7 @@ import ComputerScience from './components/pages/computerScience'
 import Couture from './components/pages/couture'
 import Agriculture from './components/pages/agriculture'
 import AllCourses from './components/pages/allCourses'
+import CourseDetail from './components/pages/courseDetail'
 
 
 function App() {
@@ -24,6 +25,9 @@ function App() {
         </Route>
         <Route path='/courses'>
           <Route index element={<AllCourses/>}/>
+        </Route>
+        <Route path='/computerScience'>
+          <Route index element={<CourseDetail/>}/>
         </Route>
         <Route path='/course1'>
           <Route index element={<ComputerScience/>}/>

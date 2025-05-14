@@ -1,101 +1,88 @@
-import { useState } from "react"
-// import Image from "next/image"
+import React from "react";
+import ReactPlayer from "react-player";
+// import { useParams } from "react-router-dom";
+import Header from "../navBar";
 
-export default function ProductDetail() {
-  const [quantity, setQuantity] = useState(1)
-  const [size, setSize] = useState("XXL")
+// Exemple de données (à remplacer par vos vraies données ou props)
+const currentVideo = {
+  title: "Microsoft Word",
+  videoUrl: "https://youtu.be/zbZ4GYt8i_0?si=oYVOuW_nETPUUfE8",
+};
 
-  const increaseQuantity = () => {
-    setQuantity((prev) => prev + 1)
-  }
+const relatedCourses = [
+  {
+    title: "Microsoft Excel",
+    thumbnail: "/images/excel.jpg",
+    videoUrl: "https://youtu.be/rvg-ZsAqInk?si=gUSlVI0IRv9UMDEj",
+  },
+  {
+    title: "Marketing Digital",
+    thumbnail: "/images/digitalMarketing.jpg",
+    videoUrl: "https://youtu.be/6EqJCCGmM_o?si=nqmh_IVhwEq28XN9",
+  },
+  {
+    title: "Community Management",
+    thumbnail: "/images/communityManagement.jpg",
+    videoUrl: "https://youtu.be/-M4AplRotQM?si=l9sEGezHLOCBTzLQ",
+  },
+  {
+    title: "Couture",
+    thumbnail: "/images/couture.jpg",
+    videoUrl: "https://youtu.be/uX5ZYSWktnQ?si=ANXQTJJSVEz2iT8l",
+  },
+  {
+    title: "Elevage",
+    thumbnail: "/images/bovin.jpg",
+    videoUrl: "https://youtu.be/UBSIlYu5yBo?si=bBVfNsSVFeNv9yKO",
+  },
+  {
+    title: "Agropastoral",
+    thumbnail: "/images/paturage.jpg",
+    videoUrl: "https://youtu.be/hf4YbsH6MyE?feature=shared",
+  },
+];
 
-  const decreaseQuantity = () => {
-    setQuantity((prev) => (prev > 1 ? prev - 1 : 1))
-  }
+export default function CourseDetail() {
+  const [selectedVideo, setSelectedVideo] = React.useState(currentVideo);
 
   return (
-    <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-        {/* Product Image */}
-        <div className="bg-white p-6 rounded-lg shadow-sm">
-          <div className="relative aspect-square">
-            <img
-              src="/placeholder.svg?height=500&width=500"
-              alt="T-shirt Kratos"
-              width={500}
-              height={500}
-              className="object-contain"
+    <div className="w-full min-h-screen flex flex-col bg-white p-8">
+      <Header />
+      <h2 className="font-bold text-2xl text-mainPink my-10">{selectedVideo.title}</h2>
+      {/* En-tête de la page */}
+      <div className="w-full max-w-6xl flex flex-col md:flex-row gap-8">
+        {/* Vidéo principale */}
+        <div className="flex-1">
+          <div className="w-full aspect-video bg-black rounded-lg overflow-hidden mb-4">
+            <ReactPlayer
+              url={selectedVideo.videoUrl}
+              controls
+              width="100%"
+              height="100%"
+              style={{ borderRadius: "0.5rem", background: "black" }}
             />
           </div>
+
         </div>
-
-        {/* Product Info */}
-        <div>
-          <h1 className="text-2xl font-bold text-gray-900 mb-2">T-shirt Venu dailleurs divinité Kratos-blanc</h1>
-
-          <p className="text-2xl font-semibold text-gray-900 mb-6">$ 25,00</p>
-
-          <div className="mb-6">
-            <div className="flex items-center mb-4">
-              <span className="mr-4 font-medium">Quatité :</span>
-              <div className="flex items-center">
-                <button onClick={decreaseQuantity} className="w-8 h-8 bg-gray-200 flex items-center justify-center">
-                  -
-                </button>
-                <div className="w-12 h-8 bg-gray-100 flex items-center justify-center">{quantity}</div>
-                <button onClick={increaseQuantity} className="w-8 h-8 bg-gray-200 flex items-center justify-center">
-                  +
-                </button>
-              </div>
+        {/* Miniatures des autres cours */}
+        <div className="w-full md:w-72 flex flex-col gap-4">
+          <h3 className="font-semibold text-lg text-gray-700 mb-2">Autres cours</h3>
+          {relatedCourses.map((course, idx) => (
+            <div
+              key={idx}
+              className="flex items-center gap-3 cursor-pointer bg-slate-100 hover:bg-slate-200 rounded-md p-2 transition"
+              onClick={() => setSelectedVideo(course)}
+            >
+              <img
+                src={course.thumbnail}
+                alt={course.title}
+                className="w-16 h-12 object-cover rounded"
+              />
+              <span className="font-medium text-gray-800">{course.title}</span>
             </div>
-
-            <div className="flex items-center">
-              <span className="mr-4 font-medium">Taille :</span>
-              <div className="relative">
-                <select
-                  value={size}
-                  onChange={(e) => setSize(e.target.value)}
-                  className="appearance-none bg-gray-100 border-none py-2 pl-4 pr-10 w-24"
-                >
-                  <option value="S">S</option>
-                  <option value="M">M</option>
-                  <option value="L">L</option>
-                  <option value="XL">XL</option>
-                  <option value="XXL">XXL</option>
-                </select>
-                <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2">
-                  <svg className="h-4 w-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <button className="w-full bg-red-600 text-white py-3 rounded-md font-medium hover:bg-red-700 transition-colors">
-            Commander
-          </button>
-
-          <div className="mt-8 space-y-4">
-            <h2 className="text-lg font-semibold">T-shirt divinité Kratos blanc;</h2>
-            <p className="text-gray-700">100 coton; nos articles son t made in kinshasa</p>
-
-            <p className="text-gray-600 text-sm">
-              jndkkl,slk jclskldlkdklvsdksdv klnlkdsklsdkldsklkldklsdvksdv lkkdkkklklklf
-            </p>
-
-            <p className="text-gray-600 text-sm">
-              kclkkklsklllkfkcnklvnklnvkl,v;vvnjb njjjjngggghhhh hdys fvjfhvjfbvbhfjkjkkkcnnnhdhhhdhhdjjjjjj
-            </p>
-
-            <p className="text-gray-600 text-sm">
-              fkjhbcbbcbncnncnncncnncccccccdsfsdsdsvsddvs vfvfvfbbbbbbbbbbbbbbbfffffddljfhhfkflll
-            </p>
-
-            <p className="text-gray-600 text-sm">ffffvhjvnnvnvnnvnvn</p>
-          </div>
+          ))}
         </div>
       </div>
     </div>
-  )
+  );
 }
