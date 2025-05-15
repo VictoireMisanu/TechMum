@@ -1,11 +1,11 @@
 import { useState } from "react"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { Play, Search, User } from "lucide-react"
 
 export default function HeaderNav() {
   const [searchValue, setSearchValue] = useState("")
   const [isDropdownOpen, setIsDropdownOpen] = useState(false) // État pour le dropdown
-
+  const navigate = useNavigate()
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchValue(e.target.value)
   }
@@ -18,6 +18,16 @@ export default function HeaderNav() {
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen)
   }
+
+  const handleLoginIconClick = () => {
+  const token = localStorage.getItem('auth_token');
+  if (token) {
+    navigate('/'); 
+  } else {
+    navigate('/login'); 
+  }
+};
+
 
   return (
     <header className="w-full h-20 flex flex-row items-center bg-white py-4 px-6 border-b border-gray-100 shadow-sm shadow-primaryViolete sticky top-0 z-50">
@@ -108,9 +118,9 @@ export default function HeaderNav() {
 
 
           {/* User Icon */}
-          <Link to="/register" className="border-l pl-6 border-gray-300">
+          <button onClick={handleLoginIconClick} className="border-l pl-6 border-gray-300">
             <User className="h-7 w-7 text-gray-800" />
-          </Link>
+          </button>
         </div>
       </div>
     </header>

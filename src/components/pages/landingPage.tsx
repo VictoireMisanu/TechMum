@@ -1,16 +1,76 @@
 // import { useState } from "react"
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import Header from '../navBar'
 import { Info, Play } from 'lucide-react'
 import BigTitle from '../Title/bigTitle'
 import Card from '../Card/card1'
 import CourseCard from '../Card/videoCourse'
 import Footer from '../footer'
-
+import { useState } from 'react'
+// import emailjs from '@emailjs/browser';
 
 export default function LandingPage() {
 
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
+    const publicKey = import.meta.env.VITE_PUBLIC_KEY
+
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState<string | null>(null);
+    // const [showPopup, setShowPopup] = useState(false);
+    // const [isMenuOpen, setIsMenuOpen] = useState(false);
+    // const [showUserMenu, setShowUserMenu] = useState(false);
+
+    
+    // const users = JSON.parse(localStorage.getItem("user_info") || "{}");
+
+    const navigate = useNavigate();
+    
+    // const dropdownRef = useRef<HTMLDivElement>(null);
+
+
+    //const isLoggedIn = Object.keys(users).length > 0;
+// const handleUserIconClick = () => {
   
+//   if (!isLoggedIn) {
+//       navigate('/signUp');
+//       return;
+//   }
+//   setShowUserMenu(!showUserMenu);
+// };
+
+//   const handleDeconnection = () => {
+//   localStorage.removeItem('auth_token');
+//   localStorage.removeItem('user_info');
+//   setShowUserMenu(false);
+//   navigate('/');
+// };
+
+
+    if (loading) return (
+        <div className=" h-screen w-full bg-slate-300 flex justify-center items-center">
+            <img src="/logo/logoMumTech.png" alt="Mum tech"  />
+        </div>
+    )
+    if (error) return <div className="text-center text-red-500">{error}</div>;
+
+    // const handleSendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+    //     e.preventDefault()
+    //     emailjs.sendForm(serviceId, templateId, e.target as HTMLFormElement, publicKey)
+    //         .then(
+    //             (result) => {
+    //                 console.log('Message envoyé avec succès', result.text);
+    //                 setShowPopup(true);
+    //             },
+    //             (error) => {
+    //                 console.error('Erreur lors de l\'envoi du message', error.text);
+    //             }
+    //         );
+
+    //   setUserName('');
+    //   setEmailAddress('');
+    //   setMessage('');
+    // }
   return (
     <div className="w-full flex flex-col">
         <Header/>
