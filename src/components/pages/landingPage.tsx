@@ -1,5 +1,5 @@
 // import { useState } from "react"
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import Header from '../navBar'
 import { Info, Play } from 'lucide-react'
 import BigTitle from '../Title/bigTitle'
@@ -11,9 +11,9 @@ import { useState } from 'react'
 
 export default function LandingPage() {
 
-    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID
-    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
-    const publicKey = import.meta.env.VITE_PUBLIC_KEY
+    // const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID
+    // const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
+    // const publicKey = import.meta.env.VITE_PUBLIC_KEY
 
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
@@ -24,7 +24,7 @@ export default function LandingPage() {
     
     // const users = JSON.parse(localStorage.getItem("user_info") || "{}");
 
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
     
     // const dropdownRef = useRef<HTMLDivElement>(null);
 
