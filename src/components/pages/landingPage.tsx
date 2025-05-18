@@ -96,17 +96,18 @@ export default function LandingPage() {
               </div>
             </div>
         </div>
-        <div id='aboutSection' className='h-[35rem] bg-simpleGray p-10 flex flex-col gap-10'>
+        <div id='aboutSection' className='h-[40rem] bg-simpleGray p-10 flex flex-col gap-10'>
           <BigTitle id="about">Pourquoi nous choisir?</BigTitle>
           <div id='aboutContent' className='w-full h-full flex justify-center items-center gap-10 px-10'>
-          <div id='image' className="w-1/2 pt-10 pl-0 pr-10 border-r-[1px] border-black relative">
-            <img src="/images/momlearning.jpg" alt="hero" className="w-full h-full object-cover rounded-lg shadow-lg shadow-black"/>
-            
-          </div>
-            <div id='text' className="w-1/2 flex flex-col justify-center gap-10 pl-8">
-              <p className="text-gray-800 mb-6 leading-relaxed text-justify">
-                Notre plateforme est dédiée à l'éducation et à l'autonomisation des mamans. Nous croyons que chaque maman mérite une seconde chance et un futur numérique. C'est pourquoi nous avons créé un espace où elles peuvent apprendre, grandir et s'épanouir. Grâce à nos cours préenregistrés, nos ressources et notre communauté de soutien, nous offrons aux mamans les outils dont elles ont besoin pour réussir dans le monde numérique d'aujourd'hui.
+            <div id='image' className="w-1/2 pl-0 pr-10 border-r-[1px] border-black relative">
+              <img src="/images/mom&machine.jpg" alt="hero" className="w-full h-[26rem] object-cover rounded-lg shadow-lg shadow-black"/>
               
+            </div>
+            <div id='text' className="w-1/2  flex flex-col justify-center gap-10 pl-8">
+              <p className="text-gray-800 mb-6 leading-relaxed text-justify">
+                Notre plateforme est dédiée à l'éducation et à l'autonomisation non seulement des filles-mères mais aussi de toutes les jeunes filles souhaitant de s'auto-former dans les domaines du numérique, de l'agriculture et de la couture.
+                Cette plateforme est un espace où elles peuvent apprendre, grandir et s'épanouir. 
+                Grâce à nos cours préenregistrés, nos ressources et notre communauté de soutien, nous offrons à ces femmes une possibilté de communiquer avec les concepteurs des cours et les autres femmes quand elles ont des difficultés en rapport avec les cours. les outils dont elles ont besoin pour entreprendre et devenir autonome.
               </p>
 
               <div>
@@ -125,12 +126,12 @@ export default function LandingPage() {
             <div id='cards' className='w-1/2 flex flex-wrap gap-6 justify-center items-center'>
               <Card title='Diversité des cours' description='Nous vous proposons une diversité des cours' imageUrl='/svg/diversity.svg'/>
               <Card title='Accessibilité offline' description="Vous pouvez suivre les cours même en étant offline" imageUrl='/svg/offline.svg'/>
-              <Card title="Suivi de l'évolution" description="Nos tests sont fait pour vous suivre votre évaluation" imageUrl='/svg/community.svg'/>
+              <Card title="Suivi de l'évolution" description="Nos tests sont fait pour vous suivre votre évaluation" imageUrl='/svg/evolution.svg'/>
               <Card title="Communauté d'entraide" description="Nous avons une communauté d'échange" imageUrl='/svg/community.svg'/>
             </div>
             {/* Image Section */}
             <div id='image' className="w-1/2 pl-10  relative">
-              <img src="/images/momAlone.jpg" alt="hero" className="w-full h-full object-cover rounded-lg shadow-lg shadow-black"/>
+              <img src="/images/employee1.jpg" alt="hero" className="w-full h-full object-cover rounded-lg shadow-lg shadow-black"/>
             </div>
           </div>
         </div>
@@ -138,7 +139,7 @@ export default function LandingPage() {
           <BigTitle id="Courses">Nos cours</BigTitle>
           <p className='text-xl leading-10'>Nous vous proposons une gamme de cours diversifiés adaptés pour vous.</p>
           <div id='courses' className='w-full h-auto flex flex-row items-center justify-center gap-10'>
-            <CourseCard className="w-full h-full flex flex-col gap-2 justify-start bg-slate-100 shadow-sm shadow-slate-500 hover:shadow-black hover:bg-slate-300" title="Informatique" description='Différents modules disponibles.' imageUrl='/images/women&computer.jpg' courses={6} time={5} test={1} price={40} language='Français' path='/course1'/>
+            <CourseCard className="w-full h-full flex flex-col gap-2 justify-start bg-slate-100 shadow-sm shadow-slate-500 hover:shadow-black hover:bg-slate-300" title="Informatique" description='Différents modules disponibles.' imageUrl='/images/employee3.jpg' courses={6} time={5} test={1} price={40} language='Français' path='/course1'/>
             <CourseCard className="w-full h-full flex flex-col gap-2 justify-start bg-slate-100 shadow-sm shadow-slate-500 hover:shadow-black hover:bg-slate-300" title='Agriculture' description='Tout pour commencer son projet agricole.' imageUrl='/images/agriculture.jpg' courses={6} time={3} test={1} price={40} language='Français'path='/course2'/> 
             <CourseCard className="w-full h-full flex flex-col gap-2 justify-start bg-slate-100 shadow-sm shadow-slate-500 hover:shadow-black hover:bg-slate-300" title='Couture' description='Devenir couturière professionnelle.' imageUrl='/images/couture.jpg' courses={6} time={3} test={1} price={40} language='Français'path='/course3'/>
 

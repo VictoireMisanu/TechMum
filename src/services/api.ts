@@ -9,7 +9,6 @@ export const registerAccountInfo = async (formData: FormData) => {
   try {
 
     const response = await api.post('/signup', formData);
-    alert('Compte crée avec succès')
     return response.data;
   } catch (error) {
     alert('Erreur lors de la création du compte')
