@@ -6,7 +6,7 @@ import BigTitle from '../Title/bigTitle'
 import Card from '../Card/card1'
 import CourseCard from '../Card/videoCourse'
 import Footer from '../footer'
-import { useState } from 'react'
+// import { useState } from 'react'
 // import emailjs from '@emailjs/browser';
 
 export default function LandingPage() {
@@ -15,8 +15,8 @@ export default function LandingPage() {
     // const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
     // const publicKey = import.meta.env.VITE_PUBLIC_KEY
 
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState<string | null>(null);
+    // const [loading, setLoading] = useState(false);
+    // const [error, setError] = useState<string | null>(null);
     // const [showPopup, setShowPopup] = useState(false);
     // const [isMenuOpen, setIsMenuOpen] = useState(false);
     // const [showUserMenu, setShowUserMenu] = useState(false);
@@ -47,12 +47,12 @@ export default function LandingPage() {
 // };
 
 
-    if (loading) return (
-        <div className=" h-screen w-full bg-slate-300 flex justify-center items-center">
-            <img src="/logo/logoMumTech.png" alt="Mum tech"  />
-        </div>
-    )
-    if (error) return <div className="text-center text-red-500">{error}</div>;
+    // if (loading) return (
+    //     <div className=" h-screen w-full bg-slate-300 flex justify-center items-center">
+    //         <img src="/logo/logoMumTech.png" alt="Mum tech"  />
+    //     </div>
+    // )
+    // if (error) return <div className="text-center text-red-500">{error}</div>;
 
     // const handleSendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     //     e.preventDefault()
