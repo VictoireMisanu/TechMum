@@ -1,4 +1,4 @@
-import { useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import { Play, Search, User } from "lucide-react"
 
@@ -34,6 +34,19 @@ const handleUserIconClick = () => {
   }
   setShowUserMenu(!showUserMenu);
 };
+// Fermer le menu utilisateur si on clique en dehors
+useEffect(() => {
+  const handleClickOutside = (event: MouseEvent) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+      setShowUserMenu(false);
+    }
+  };
+
+  document.addEventListener("mousedown", handleClickOutside);
+  return () => {
+    document.removeEventListener("mousedown", handleClickOutside);
+  };
+})
 
 const handleDeconnection = () => {
   localStorage.removeItem('auth_token');
@@ -144,7 +157,10 @@ const handleDeconnection = () => {
             className="absolute right-0 mt-2 w-64 bg-white rounded-lg shadow-lg py-2 z-50"
           >
             <div className="px-4 py-3 border-b border-gray-200">
-              <p className="text-sm font-medium text-gray-900">{users.user_name}</p>
+              <span className="flex items-center space-x-2">
+                <p className="text-sm font-medium text-gray-900">{users.user_firstname}</p>
+                <p className="text-sm font-medium text-gray-900">{users.user_name}</p>
+              </span>
               <p className="text-sm text-gray-500">{users.user_email}</p>
             </div>
             <button 
