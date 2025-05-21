@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useRef, useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import { Play, Search, User } from "lucide-react"
 
@@ -19,13 +19,27 @@ export default function HeaderNav() {
     setIsDropdownOpen(!isDropdownOpen)
   }
 
-  const handleLoginIconClick = () => {
-  const token = localStorage.getItem('auth_token');
-  if (token) {
-    navigate('/'); 
-  } else {
-    navigate('/login'); 
+  const users = JSON.parse(localStorage.getItem("user_info") || "{}");
+  
+const [showUserMenu, setShowUserMenu] = useState(false);
+const dropdownRef = useRef<HTMLDivElement>(null);
+const isLoggedIn = Object.keys(users).length > 0;
+
+
+const handleUserIconClick = () => {
+  
+  if (!isLoggedIn) {
+      navigate('/login');
+      return;
   }
+  setShowUserMenu(!showUserMenu);
+};
+
+const handleDeconnection = () => {
+  localStorage.removeItem('auth_token');
+  localStorage.removeItem('user_info');
+  setShowUserMenu(false);
+  navigate('/');
 };
 
 
@@ -118,9 +132,29 @@ export default function HeaderNav() {
 
 
           {/* User Icon */}
-          <button onClick={handleLoginIconClick} className="border-l pl-6 border-gray-300">
-            <User className="h-7 w-7 text-gray-800" />
+         <button 
+            onClick={handleUserIconClick}
+              className="flex items-center justify-center hover:opacity-80 transition-opacity"
+          >
+            <User className="w-8 h-8 md:w-10 md:h-10"/>
           </button>
+            {showUserMenu && isLoggedIn && (
+          <div 
+            ref={dropdownRef}
+            className="absolute right-0 mt-2 w-64 bg-white rounded-lg shadow-lg py-2 z-50"
+          >
+            <div className="px-4 py-3 border-b border-gray-200">
+              <p className="text-sm font-medium text-gray-900">{users.user_name}</p>
+              <p className="text-sm text-gray-500">{users.user_email}</p>
+            </div>
+            <button 
+              onClick={handleDeconnection}
+              className="w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-gray-100 transition-colors"
+            >
+              Déconnexion
+            </button>
+          </div>
+         )}
         </div>
       </div>
     </header>
